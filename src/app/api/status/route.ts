@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { testDeepSeekConnection } from '@/lib/deepseek';
 import { testQuarkCookie } from '@/lib/quark-direct';
 
+export const preferredRegion = ['hkg1', 'sin1'];
+
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => ({}));
   const deepseekKey: string = body.deepseekKey || '';
