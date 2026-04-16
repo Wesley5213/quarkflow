@@ -1,0 +1,10 @@
+version: '3'
+services:
+  quarkflow:
+    build: .
+    container_name: quarkflow
+    ports:
+      - "3000:3000"
+    environment:
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+    restart: unless-stopped
